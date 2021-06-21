@@ -426,11 +426,13 @@
                 {
                     // Clear the ADS_UF_ACCOUNTDISABLE flag
                     uac &= ~UserAccountControl.Disabled;
+                    uac |= UserAccountControl.PasswordNeverExpires;
                 }
                 else
                 {
                     // Set the ADS_UF_ACCOUNTDISABLE flag
                     uac |= UserAccountControl.Disabled;
+                    uac |= UserAccountControl.PasswordNeverExpires;
                 }
 
                 this.dataTableCursor.BeginEditForUpdate();
